@@ -1,0 +1,11 @@
+{
+  "name": "study-game-ts-3d-tank",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "npx tsc --project tsconfig.json",
+    "watch": "npx tsc --project tsconfig.json --watch"
+  },
+  "devDependencies": {
+    "typescript": "^6.0.2"
+  }
+}

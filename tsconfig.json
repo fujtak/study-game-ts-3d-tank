@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "rootDir": "ts",
+    "outDir": "js",
+    "module": "esnext",
+    "rewriteRelativeImportExtensions": true
+  }
+}
