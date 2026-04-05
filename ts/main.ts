@@ -1,4 +1,13 @@
-import { Sub } from "./sub.ts"
+import { CONTEXT } from "./CONTEXT.ts"
 
-console.log('hello!')
-new Sub()
+function paint() {
+  CONTEXT.fillStyle = 'black'
+  CONTEXT.fillRect(0, 0, CONTEXT.canvas.width, CONTEXT.canvas.height)
+}
+
+function loop() {
+  paint()
+  requestAnimationFrame(loop)
+}
+
+loop()
