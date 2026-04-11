@@ -28,10 +28,9 @@ export class DecorationTile {
         : isLeft ? this.points[i].rotateHorizontal(1)
         : isRight ? this.points[i].rotateHorizontal(-1)
         : this.points[i]
-      const yOrigin = -(this.points[i].y * scale / this.points[i].z)
-      if(yOrigin < 0) continue
-      const y = yOrigin + offsetY
+      if(this.points[i].z < 0) continue
       const x = (this.points[i].x * scale / this.points[i].z) + offsetX
+      const y = -(this.points[i].y * scale / this.points[i].z) + offsetY
       if(i === 0) {
         CONTEXT.moveTo(x, y)
         continue
