@@ -1,5 +1,6 @@
 import { CONTEXT } from "./CONTEXT.ts"
 import { Vector } from "./Vector.ts"
+import { keyboardPressing } from "./KeyboardPressing.ts"
 
 export class DecorationTile {
   static readonly size = 10;
@@ -20,8 +21,13 @@ export class DecorationTile {
     const offsetX = CONTEXT.canvas.width / 2
     const offsetY = CONTEXT.canvas.height / 2
     const scale = 1000
+    const isLeft = keyboardPressing.has('ArrowLeft')
+    const isRight = keyboardPressing.has('ArrowRight')
     for(let i = 0; i < this.points.length; ++i) {
-      this.points[i] = this.points[i].rotateHorizontal(0.05)
+      this.points[i] = (isLeft && isRight) ? this.points[i]
+        : isLeft ? this.points[i].rotateHorizontal(1)
+        : isRight ? this.points[i].rotateHorizontal(-1)
+        : this.points[i]
       const yOrigin = -(this.points[i].y * scale / this.points[i].z)
       if(yOrigin < 0) continue
       const y = yOrigin + offsetY
