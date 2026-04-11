@@ -3,6 +3,7 @@
     "rootDir": "ts",
     "outDir": "js",
     "module": "esnext",
+    "lib": ["dom", "esnext"],
     "rewriteRelativeImportExtensions": true
   }
 }
