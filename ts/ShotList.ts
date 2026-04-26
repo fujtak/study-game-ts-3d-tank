@@ -14,8 +14,9 @@ class ShotList {
     const spacekey = ' '
     if(!keyboardPressing.has(spacekey)) return
     const interval = 32
-    if(this.frame % interval > 0) return
+    if(interval > this.frame) return 
     this.list.push(new Shot())
+    this.frame = 0
   }
 
   private delete() {
