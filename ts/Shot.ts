@@ -14,7 +14,7 @@ export class Shot {
   }
 
   paint() {
-    CONTEXT.strokeStyle = 'red'
+    CONTEXT.strokeStyle = '#00FF00'
     CONTEXT.lineWidth = 2
     CONTEXT.beginPath()
     const offsetX = CONTEXT.canvas.width / 2
