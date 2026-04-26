@@ -19,6 +19,7 @@ export class Tile {
 
   paint() {
     CONTEXT.strokeStyle = 'white'
+    CONTEXT.lineWidth = 1
     CONTEXT.beginPath()
     const offsetX = CONTEXT.canvas.width / 2
     const offsetY = CONTEXT.canvas.height / 2
