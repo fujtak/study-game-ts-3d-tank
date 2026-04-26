@@ -1,7 +1,7 @@
 import { Vector } from "./Vector.ts";
 import { keyboardPressing } from "./KeyboardPressing.ts"
 
-export class DecorationTilePoint {
+export class TilePoint {
   private readonly vector;
   private readonly speed;
 
@@ -27,6 +27,6 @@ export class DecorationTilePoint {
       : isUp ? rotated.add(0, 0, -this.speed)
       : isDown ? rotated.add(0, 0, this.speed)
       : rotated
-    return new DecorationTilePoint(moved)
+    return new TilePoint(moved)
   }
 }

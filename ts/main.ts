@@ -1,5 +1,5 @@
 import { CONTEXT } from "./CONTEXT.ts"
-import { tiles } from "./DecorationTileList.ts"
+import { tiles } from "./TileList.ts"
 
 function paint() {
   CONTEXT.fillStyle = 'black'

@@ -1,19 +1,19 @@
 import { CONTEXT } from "./CONTEXT.ts"
 import { Vector } from "./Vector.ts"
-import { DecorationTilePoint } from "./DecorationTilePoint.ts"
+import { TilePoint } from "./TilePoint.ts"
 
-export class DecorationTile {
+export class Tile {
   static readonly size = 10;
   private readonly y: number;
-  private readonly points: Array<DecorationTilePoint>;
+  private readonly points: Array<TilePoint>;
 
   constructor(x: number, z: number) {
     this.y = -5
     this.points = [
-      new DecorationTilePoint(new Vector(x, this.y, z)),
-      new DecorationTilePoint(new Vector(x + DecorationTile.size, this.y, z)),
-      new DecorationTilePoint(new Vector(x + DecorationTile.size, this.y, z - DecorationTile.size)),
-      new DecorationTilePoint(new Vector(x, this.y, z - DecorationTile.size)),
+      new TilePoint(new Vector(x, this.y, z)),
+      new TilePoint(new Vector(x + Tile.size, this.y, z)),
+      new TilePoint(new Vector(x + Tile.size, this.y, z - Tile.size)),
+      new TilePoint(new Vector(x, this.y, z - Tile.size)),
     ]
   }
 
