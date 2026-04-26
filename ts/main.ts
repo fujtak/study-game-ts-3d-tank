@@ -1,17 +1,20 @@
 import { CONTEXT } from "./CONTEXT.ts"
 import { tiles } from "./TileList.ts"
-import { Shot } from "./Shot.ts"
+import { shots } from "./ShotList.ts"
 
-let shot = new Shot()
+function update() {
+  shots.update()
+}
 
 function paint() {
   CONTEXT.fillStyle = 'black'
   CONTEXT.fillRect(0, 0, CONTEXT.canvas.width, CONTEXT.canvas.height)
   tiles.paint()
-  shot.paint()
+  shots.paint()
 }
 
 function loop() {
+  update()
   paint()
   requestAnimationFrame(loop)
 }
