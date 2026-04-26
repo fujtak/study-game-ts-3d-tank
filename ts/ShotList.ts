@@ -18,8 +18,17 @@ class ShotList {
     this.list.push(new Shot())
   }
 
+  private delete() {
+    for(let i = 0; i < this.list.length; ++i) {
+      const isFar = this.list[i].z > 1000
+      if(!isFar) continue
+      this.list.splice(i, 1)
+    }
+  }
+
   update() {
     this.frame++
+    this.delete()
     for(let i = 0; i < this.list.length; ++i) {
       this.list[i] = this.list[i].update()
     }

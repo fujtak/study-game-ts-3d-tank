@@ -2,7 +2,7 @@ import { CONTEXT } from "./CONTEXT.ts";
 import { Vector } from "./Vector.ts"
 
 export class Shot {
-  private readonly z: number;
+  readonly z: number;
   private readonly points: Array<Vector>;
 
   constructor(z: number = 0) {
