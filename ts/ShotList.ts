@@ -10,11 +10,13 @@ class ShotList {
 
   private add() {
     if(!keyboardPressing.has(' ')) return
-    const shot = new Shot()
-    this.list.push(shot)
+    this.list.push(new Shot())
   }
 
   update() {
+    for(let i = 0; i < this.list.length; ++i) {
+      this.list[i] = this.list[i].update()
+    }
     this.add()
   }
 
